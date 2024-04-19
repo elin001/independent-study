@@ -1,0 +1,210 @@
+/* lines from Josh Comeau's Modern CSS Reset https://www.joshwcomeau.com/css/custom-css-reset/ */
+
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  * {
+    margin: auto;
+  }
+
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    transition: background-color 0.5s ease, color 0.5s ease;
+    width: 700px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+  }
+
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  
+  input, button, textarea, select {
+    font: inherit;
+  }
+  
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+
+  h1 {
+    align-self: flex-start;
+  }
+  
+  #root, #__next {
+    isolation: isolate;
+  }
+
+/* LIGHT/DARK TOGGLE */
+.toggle-container {
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Align items to the flex end */
+    position: absolute; /* Position the container absolutely */
+    top: 0vh; /* Adjust the distance from the top */
+    right: 20px; /* Adjust the distance from the right */
+}
+
+label {
+    display: none;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+}
+
+.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ddd;
+    transition: .4s;
+    border-radius: 10px;
+}
+
+.slider svg {
+    width: 16px; /* Adjust the icon width */
+    height: 16px; /* Adjust the icon height */
+    fill: white; /* Icon color */
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px; /* Adjust the height */
+    width: 16px; /* Adjust the width */
+    left: 2px; /* Adjust the left position */
+    bottom: 2px; /* Adjust the bottom position */
+    background-color: white;
+    transition: .4s;
+    border-radius: 10px;
+}
+
+input:checked + .slider {
+    background-color: #869caf;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #869caf;
+}
+
+input:checked + .slider:before {
+    transform: translateX(20px);
+}
+
+.light-mode {
+    background-color: #fff;
+    color: #292830;
+}
+
+.dark-mode {
+    background-color: #292830;
+    color: #fff;
+}
+
+/* TIC TAC TOE */
+.tic-tac-toe-container {
+    flex-flow: column wrap;
+    text-align: center;
+}
+
+.board {
+    align-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-gap: 5px;
+    margin: 20px auto;
+    justify-content: center;
+}
+
+.cell {
+    position: relative; 
+    width: 100px;
+    height: 100px;
+    background-color: #ddd;
+    border: 1px solid #999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; 
+    cursor: pointer;
+}
+
+.cell img {
+    position: absolute;
+    max-width: 100%;
+    max-height: 100%;
+}
+.message {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.tic-tac-toe-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+/* COUNTDOWN */
+.countdown-container {
+    color: #292830;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  li {
+    display: inline-block;
+    font-size: 1.5em;
+    list-style-type: none;
+    padding: 1em;
+    text-transform: uppercase;
+  }
+  
+  li span {
+    display: block;
+    font-size: 4.5rem;
+  }
+  
+  .emoji {
+    display: none;
+    padding: 1rem;
+  }
+  
+  .emoji span {
+    font-size: 4rem;
+    padding: 0 .5rem;
+  }
+  
+  @media all and (max-width: 768px) {
+    h1 {
+      font-size: calc(1.5rem * var(--smaller));
+    }
+    
+    li {
+      font-size: calc(1.125rem * var(--smaller));
+    }
+    
+    li span {
+      font-size: calc(3.375rem * var(--smaller));
+    }
+  }

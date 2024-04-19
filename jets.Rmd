@@ -1,0 +1,23 @@
+---
+title: "r"
+output: html_document
+date: "2024-01-31"
+---
+
+```{r}
+library(tidyverse)
+library(janitor)
+library(rvest)
+```
+
+```{r}
+jets <- read_html("https://celebrityprivatejettracker.com/leaderboard/")
+leaders <- jets %>% html_element("table")
+
+full <- leaders %>% html_table() %>% clean_names
+
+full$celebrity_owner <- gsub("\\(CLICK TO ENLARGE\\)", "", full$celebrity_owner)
+
+full %>% arrange(desc(total_flights))
+```
+

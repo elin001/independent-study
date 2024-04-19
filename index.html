@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Independent Study - Beginner Projects</title>
+    <link rel="stylesheet" href=style.css>
+</head>
+<body>
+<div class="toggle-container">
+    <label class="switch">
+        <input type="checkbox" id="theme-toggle" onclick="toggleTheme()">
+        <span class="slider round"></span>
+    </label>
+    <label for="theme-toggle">Dark Mode</label>
+</div>
+<script src="scripts/toggle-script.js"></script>
+
+    <h1>Projects</h1>
+    <p>This is a set of assignments for an independent study my senior spring with Mike Jenner. I started my first few weeks with some simple Javascript projects, like a Tic Tac Toe Board, a light/dark mode toggle and a graduation counter. I spent the next few picking up D3.js and made a simple interactive chart with data about fatal police pursuits.</p>
+    <br>
+    <h2>Project 2: Tic Tac Toe</h2>
+    <div class="tic-tac-toe-container">
+        <div id="board" class="board">
+            <div class="cell" onclick="handleMove(0)"></div>
+            <div class="cell" onclick="handleMove(1)"></div>
+            <div class="cell" onclick="handleMove(2)"></div>
+            <div class="cell" onclick="handleMove(3)"></div>
+            <div class="cell" onclick="handleMove(4)"></div>
+            <div class="cell" onclick="handleMove(5)"></div>
+            <div class="cell" onclick="handleMove(6)"></div>
+            <div class="cell" onclick="handleMove(7)"></div>
+            <div class="cell" onclick="handleMove(8)"></div>
+        </div>
+        <div id="message" class="message"></div>
+        <button class="tic-tac-toe-button" onclick="resetGame()">Reset</button>
+    </div>
+    <script src="scripts/tic-tac-toe-script.js"></script>
+    <br>
+    <div class="countdown-container"></div>
+    <h2>Project 3: Graduation Countdown</h2>
+    <h3>Has Ellie graduated yet?</h3>
+    <p>Ellie graduates in</p>
+        <div id="countdown-div">
+          <p id="countdown"></p>
+      </div>
+      <script src="scripts/countdown.js"></script>
+</body>
+</html>
